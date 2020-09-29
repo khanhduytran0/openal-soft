@@ -24,7 +24,7 @@ jobs:
 
     - name: Configure CMake and Build
       # working-directory: ${{runner.workspace}}
-      run: bash ci_build.bash
+      run: bash android_ci_build.bash
 
     - name: Upload build output
       uses: actions/upload-artifact@v2
