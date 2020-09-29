@@ -9,7 +9,7 @@ cmake_build () {
   cmake \
         -DANDROID_ABI=$ANDROID_ABI \
         -DANDROID_STL=c++_shared \
-        -DCMAKE_TOOLCHAIN_FILE=~/android-ndk-r21/build/cmake/android.toolchain.cmake \
+        -DCMAKE_TOOLCHAIN_FILE=$ANDROID_SDK_ROOT/ndk-bundle/build/cmake/android.toolchain.cmake \
         -DOBOE_SOURCE="$OBOE_LOC" \
         -DALSOFT_REQUIRE_OBOE=ON \
         -DALSOFT_REQUIRE_OPENSL=ON \
