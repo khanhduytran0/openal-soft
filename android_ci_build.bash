@@ -14,7 +14,7 @@ cmake_build () {
         -DALSOFT_REQUIRE_OBOE=ON \
         -DALSOFT_REQUIRE_OPENSL=ON \
         -DALSOFT_EMBED_HRTF_DATA=YES \
-        .
+        ..
   # cmake -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DANDROID_PLATFORM=21 -DANDROID_ABI=$ANDROID_ABI -DCMAKE_TOOLCHAIN_FILE=$ANDROID_SDK_ROOT/ndk-bundle/build/cmake/android.toolchain.cmake
   cmake --build . --clean-first
   cd ..
