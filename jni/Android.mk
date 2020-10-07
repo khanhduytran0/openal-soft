@@ -70,7 +70,7 @@ LOCAL_SRC_FILES := \
     alc/backends/opensl.cpp
     
 #   alc/backends/oboe.cpp
-LOCAL_CFLAGS := -mfpu=neon
+LOCAL_CFLAGS := -mfpu=neon -fexceptions
 LOCAL_LDLIBS := -llog -lopensles
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/include
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/include
