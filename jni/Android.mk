@@ -72,7 +72,7 @@ LOCAL_SRC_FILES := \
 #   alc/backends/oboe.cpp
 LOCAL_CFLAGS := -mfpu=neon -fexceptions
 LOCAL_LDLIBS := -llog -lopensles
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/include
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/include $(LOCAL_PATH)/alc
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/include
 
 include $(BUILD_SHARED_LIBRARY)
