@@ -63,16 +63,16 @@ LOCAL_SRC_FILES := \
     alc/uiddefs.cpp \
     alc/voice.cpp \
     alc/mixer/mixer_c.cpp \
-    alc/mixer/mixer_neon.cpp.neon \
     alc/backends/base.cpp \
     alc/backends/loopback.cpp \
     alc/backends/null.cpp \
     alc/backends/opensl.cpp
+#   alc/mixer/mixer_neon.cpp.neon \
     
 #   alc/backends/oboe.cpp
-LOCAL_CFLAGS := -mfpu=neon -fexceptions
+LOCAL_CFLAGS := -fexceptions # -mfpu=neon
 LOCAL_LDLIBS := -llog -lopensles
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/include $(LOCAL_PATH)/alc
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/include $(LOCAL_PATH)/include/AL $(LOCAL_PATH)/alc
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/include
 
 include $(BUILD_SHARED_LIBRARY)
