@@ -22,8 +22,8 @@ jobs:
       # We'll use this as our working directory for all subsequent commands
       run: cmake -E make_directory ${{runner.workspace}}/build
 
-    - name: Configure CMake and Build
-      run: bash ci_build.sh
+    - name: Build OpenAL use ndk-build
+      run: ndk-build
 
     - name: Upload build output
       uses: actions/upload-artifact@v2
