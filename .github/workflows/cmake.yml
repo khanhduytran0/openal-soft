@@ -10,7 +10,9 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Build OpenAL use ndk-build
-      run: ndk-build
+      run: |
+        export ANDROID_NDK_HOME="$ANDROID_SDK_ROOT/ndk-bundle"
+        $ANDROID_NDK_HOME/ndk-build
 
     - name: Upload build output
       uses: actions/upload-artifact@v2
