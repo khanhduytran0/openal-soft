@@ -10,28 +10,6 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Build OpenAL use cmake
-      run: |
-        cmake \​
-​            -DANDROID_STL=c++_shared \​
-            -DCMAKE_TOOLCHAIN_FILE="$ANDROID_SDK_ROOT/ndk-bundle/build/cmake/android.toolchain.cmake" \
-            -DOBOE_SOURCE="$OBOE_LOC" \​
-            -DALSOFT_REQUIRE_OBOE=ON \
-            -DALSOFT_REQUIRE_OPENSL=ON \
-            -DALSOFT_EMBED_HRTF_DATA=YES \​
-            .​
-        ​cmake --build . --clean-first
-name: CMake Android build
-
-on: [push]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Build OpenAL use cmake
       run: bash ci_build.bash
 
     - name: Upload build output
