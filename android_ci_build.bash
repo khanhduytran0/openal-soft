@@ -7,7 +7,7 @@ cmake_build () {
   mkdir -p lib/$ANDROID_ABI
   cd build-$ANDROID_ABI
   cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DANDROID_PLATFORM=21 -DANDROID_ABI=$ANDROID_ABI -DCMAKE_TOOLCHAIN_FILE=$ANDROID_SDK_ROOT/ndk-bundle/build/cmake/android.toolchain.cmake
-  cmake -v --build . --clean-first
+  cmake -v --build --clean-first .
   cd ..
   cp build-$ANDROID_ABI/libopenal.so lib/$ANDROID_ABI/
 }
