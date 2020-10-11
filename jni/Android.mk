@@ -66,10 +66,10 @@ LOCAL_SRC_FILES := \
     alc/backends/base.cpp \
     alc/backends/loopback.cpp \
     alc/backends/null.cpp \
+    alc/backends/oboe.cpp \
     alc/backends/opensl.cpp
 #   alc/mixer/mixer_neon.cpp.neon \
     
-#   alc/backends/oboe.cpp
 LOCAL_CFLAGS := -fexceptions # -mfpu=neon
 LOCAL_LDLIBS := -llog -lOpenSLES
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/include $(LOCAL_PATH)/include/AL $(LOCAL_PATH)/alc $(LOCAL_PATH)/common

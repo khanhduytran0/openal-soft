@@ -14,5 +14,10 @@ cmake \​
     -DALSOFT_REQUIRE_OPENSL=ON \
     -DALSOFT_EMBED_HRTF_DATA=YES \
     .
-cmake --build . --clean-first
+
+ndk-build \
+    OBOE_SOURCE="$OBOE_LOC" \
+    ALSOFT_REQUIRE_OBOE=ON \
+    ALSOFT_REQUIRE_OPENSL=ON \
+    ALSOFT_EMBED_HRTF_DATA=YES
 
