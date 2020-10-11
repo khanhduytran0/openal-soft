@@ -5,7 +5,6 @@ on: [push]
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release
-  BUILD_ANDROID: true
 
 jobs:
   build:
@@ -17,11 +16,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
-    - name: Create Build Environment
-      # Some projects don't allow in-source building, so create a separate build directory
-      # We'll use this as our working directory for all subsequent commands
-      run: cmake -E make_directory ${{runner.workspace}}/build
 
     - name: Configure CMake and Build
       run: bash android_ci_build.bash
