@@ -5,6 +5,7 @@ on: [push]
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release
+  BUILD_ANDROID: true
 
 jobs:
   build:
@@ -23,7 +24,7 @@ jobs:
       run: cmake -E make_directory ${{runner.workspace}}/build
 
     - name: Configure CMake and Build
-      run: bash ci_build.sh
+      run: bash android_ci_build.bash
 
     - name: Upload build output
       uses: actions/upload-artifact@v2
