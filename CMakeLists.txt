@@ -194,7 +194,7 @@ unset(OLD_REQUIRED_LIBRARIES)
 # Include liblog for Android logging
 check_library_exists(log __android_log_print "" HAVE_LIBLOG)
 if(HAVE_LIBLOG)
-    set(EXTRA_LIBS log ${EXTRA_LIBS})
+    set(EXTRA_LIBS ${log-lib} ${EXTRA_LIBS})
     set(CMAKE_REQUIRED_LIBRARIES ${CMAKE_REQUIRED_LIBRARIES} log)
 endif()
 

@@ -12,8 +12,8 @@ jobs:
     - name: Build OpenAL use cmake
       run: bash ci_build.bash
 
-    - name: Upload build output
-      uses: actions/upload-artifact@v2
-      with:
-        name: openal
-        path: lib
+    # - name: Upload build output
+    #   uses: actions/upload-artifact@v2
+    #   with:
+    #     name: openal
+    #     path: lib
