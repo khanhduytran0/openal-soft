@@ -16,7 +16,7 @@ jobs:
             -DCMAKE_SYSTEM_NAME=iOS \
             -DALSOFT_REQUIRE_COREAUDIO=ON \
             -DALSOFT_EMBED_HRTF_DATA=YES \
-            "-DCMAKE_OSX_ARCHITECTURES=armv7;arm64" \
+            "-DCMAKE_OSX_ARCHITECTURES=arm64" \
             .
             
           cmake --build . --clean-first
