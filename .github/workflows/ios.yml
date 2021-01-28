@@ -1,0 +1,29 @@
+
+name: Build for iOS
+on:
+  [push, pull_request]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build for iOS
+        run: |
+          cmake \
+            -GXcode \
+            -DCMAKE_SYSTEM_NAME=iOS \
+            -DALSOFT_OSX_FRAMEWORK=ON \
+            -DALSOFT_REQUIRE_COREAUDIO=ON \
+            -DALSOFT_EMBED_HRTF_DATA=YES \
+            "-DCMAKE_OSX_ARCHITECTURES=armv7;arm64" \
+            .
+            
+          cmake --build . --clean-first
+            
+      - name: Upload build output
+        uses: actions/upload-artifact@v2
+        with:
+          name: openal
+          path: lib
